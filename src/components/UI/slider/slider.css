@@ -1,0 +1,455 @@
+.slider-wrapper {
+  display: flex;
+  height: 100vh;
+  background-image: url("../../../assets/img/paralax/bg-slider.jpg");
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-card {
+  display: flex;
+  flex: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-shadow: 0px 0px 11px 3px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.7);
+  transition: 0.5s ease-in-out;
+}
+
+.slider-card-active {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: visible;
+}
+
+.card-image {
+  width: 50vw;
+  height: 80vh;
+  object-fit: contain;
+}
+
+.card-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 1);
+  display: flex;
+  padding: 40px 30px;
+  align-items: flex-end;
+}
+
+.card-title {
+  color: white;
+  font-size: 30px;
+}
+
+.slider-pagination {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translate(-50%, 0);
+}
+
+.pagination-dot {
+  height: 12px;
+  width: 12px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin-bottom: 12px;
+  cursor: pointer;
+}
+
+.pagination-dot:hover {
+  transform: scale(1.2);
+}
+
+.pagination-dot-active {
+  background-color: #aa8453;
+}
+
+.slider .item-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  background-size: cover;
+  background-position: center;
+}
+.slider .item-slider .caption {
+  z-index: 1;
+}
+
+/* Star rating  */
+.star-rating {
+  position: relative;
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 0.9em;
+  margin-right: 0.9em;
+  margin-bottom: 2em;
+  border-right: 0.3em solid transparent;
+  border-bottom: 0.7em solid #e4a853;
+  border-left: 0.3em solid transparent;
+  font-size: 12px;
+}
+/* Controlls the size of the stars. */
+
+.star-rating:before,
+.star-rating:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  position: absolute;
+  top: 0.6em;
+  left: -1em;
+  border-right: 1em solid transparent;
+  border-bottom: 0.7em solid #e4a853;
+  border-left: 1em solid transparent;
+  transform: rotate(-35deg);
+}
+
+.star-rating:after {
+  transform: rotate(35deg);
+}
+
+.slider span i.star-rating {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.v-middle {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  left: 10%;
+  -webkit-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
+}
+
+.slider .caption h4 {
+  animation-delay: 0.4s;
+}
+.slider .caption h1 {
+  font-family: "Gilda Display", serif;
+  letter-spacing: 16px;
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.slider .caption .butn-light {
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+}
+
+.butn-light {
+  position: relative;
+  line-height: 1.2em;
+}
+
+.butn-light a,
+.butn-light p {
+  letter-spacing: 3px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.butn-light a:after,
+.butn-light p:after {
+  content: "";
+  width: 0;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 100%;
+  z-index: 1;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  background: #fff;
+  border-radius: 8px;
+}
+.butn-light a span,
+.butn-light p span {
+  position: relative;
+  z-index: 2;
+}
+.butn-light a:hover:after,
+.butn-light p:hover:after {
+  width: 100%;
+  left: 0;
+  -webkit-transition: width 0.3s ease;
+  transition: width 0.3s ease;
+}
+.butn-light a:hover span,
+.butn-light p:hover span {
+  color: #222;
+}
+
+.animate-slider {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+/* reservation */
+.slider-wrapper .reservation {
+  text-orientation: sideways;
+  margin: 0;
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9;
+}
+
+.slider-wrapper .reservation .call {
+  margin-left: 80px;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 400;
+  letter-spacing: 6px;
+  font-size: 16px;
+  line-height: 2em;
+}
+
+.reservation .call span {
+  font-family: "Gilda Display", serif;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.slider-wrapper .reservation .icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+  border-radius: 100%;
+}
+.reservation .icon i {
+  color: #fff;
+  font-size: 32px;
+  padding-left: 8px;
+  padding-bottom: 8px;
+  transform: rotate(90deg);
+}
+.reservation .icon:hover {
+  border: 1px solid #aa8453;
+}
+@media screen and (max-width: 768px) {
+  .slider-wrapper {
+    height: 200vh;
+  }
+  .slider-wrapper .reservation {
+    display: none;
+  }
+  .slider-card {
+    flex-direction: column-reverse;
+  }
+  .v-middle {
+    width: 100%;
+  }
+
+  .slider .item-slider {
+    height: 50%;
+  }
+
+  .card-image {
+    width: 100vw;
+  }
+
+  .slider .item-slider {
+    position: relative;
+  }
+}
+
+/* Booking */
+.booking-wrapper {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  bottom: 5%;
+  z-index: 5;
+}
+
+.booking-wrapper form .col1 {
+  float: left;
+  width: 20%;
+}
+
+.booking-wrapper form .col2 {
+  float: left;
+  width: 14%;
+}
+
+.booking-wrapper form .col3 {
+  float: left;
+  width: 18%;
+}
+
+.booking-wrapper form .c1 {
+  border-right: 1px solid #f1eeeb;
+  height: 62px;
+  margin-bottom: 15px;
+}
+
+.booking-wrapper form .c2 {
+  /* border-right: 1px solid #f1eeeb; */
+  height: 62px;
+  margin-bottom: 15px;
+}
+
+.booking-wrapper form .c3 {
+  /* border-right: 1px solid #f1eeeb; */
+  height: 62px;
+  margin-bottom: 15px;
+}
+
+.booking-wrapper form .c4 {
+  /* border-right: 1px solid #f1eeeb; */
+  height: 62px;
+  margin-bottom: 15px;
+}
+
+.booking-wrapper form .c5 {
+  /* border-right: 1px solid #f1eeeb; */
+  height: 62px;
+  margin-bottom: 15px;
+}
+
+.input_inner {
+  position: relative;
+}
+
+.input_inner:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 23px;
+  pointer-events: none;
+  content: "\e6b6";
+  font-family: "themify";
+  font-size: 15px;
+  color: #aa8453;
+  line-height: 1;
+}
+
+.input_inner input {
+  display: block;
+  width: 100%;
+  font-size: 15px;
+  color: #222;
+  padding: 19.5px 40px 20px 19.5px;
+  background: #fff;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.input_inner input::placeholder {
+  font-size: 15px;
+  color: #222 !important;
+}
+
+.input_inner input:focus {
+  outline: none;
+  box-shadow: none;
+  background: #fff;
+  color: #222 !important;
+}
+
+.booking-wrapper form label {
+  display: none;
+}
+
+.booking-wrapper select {
+  appearance: none;
+  outline: 0;
+  box-shadow: none;
+  border: 0 !important;
+  background: #fff;
+  background-image: none;
+  flex: 1;
+  padding: 0 5em;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.booking-wrapper select::-ms-expand {
+  display: none;
+}
+
+/* Custom Select */
+.custom-select {
+  position: relative;
+  font-family: Arial;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element:*/
+}
+
+.select-selected {
+  background-color: DodgerBlue;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-color: #fff transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent #fff transparent;
+  top: 7px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-items div,
+.select-selected {
+  color: #ffffff;
+  padding: 8px 16px;
+  border: 1px solid transparent;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  user-select: none;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: DodgerBlue;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  display: none;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  background-color: rgba(0, 0, 0, 0.1);
+}
